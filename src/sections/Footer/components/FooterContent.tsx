@@ -8,15 +8,15 @@ export const FooterContent = () => {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.6 }}
-      className="relative items-center box-border caret-transparent flex flex-col z-10"
+      className="relative items-center box-border caret-transparent flex flex-col z-10 text-center md:text-left"
     >
-      <h1 className="text-4xl font-bold box-border caret-transparent leading-10 max-w-none text-center md:text-5xl md:leading-[48px] md:max-w-xl">
+      <h1 className="text-4xl font-bold box-border caret-transparent leading-10 max-w-none md:text-5xl md:leading-[48px] md:max-w-xl">
         Let&#39;s
         <span className="text-emerald-400 text-4xl box-border caret-transparent leading-10 md:text-5xl md:leading-[48px]">
           Talk
         </span>
       </h1>
-      <p className="box-border caret-transparent text-center my-5 md:mt-10">
+      <p className="box-border caret-transparent my-4 md:mt-6">
         What led you here? What are you looking for? I would love to hear from
         you over a virtual coffee chat!
       </p>
@@ -37,12 +37,12 @@ export const FooterContent = () => {
           </span>
         </motion.button>
       </Link>
-      <hr className="box-border caret-transparent h-0 border-gray-200 my-12 border-b-0 border-x-0 border-solid" />
+  <hr className="box-border caret-transparent h-0 border-gray-200 my-8 border-b-0 border-x-0 border-solid" />
       <Link to="/personal" className="box-border caret-transparent block">
         <motion.button
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
-          className="text-emerald-400 font-semibold items-center bg-transparent caret-transparent inline-flex h-11 justify-center leading-6 text-center text-nowrap border border-emerald-400 mt-4 px-6 py-0 rounded-full border-solid hover:text-zinc-900 hover:bg-emerald-400 transition-all"
+          className="text-emerald-400 font-semibold items-center bg-transparent caret-transparent inline-flex h-11 justify-center leading-6 text-center text-nowrap border border-emerald-400 mt-3 px-6 py-0 rounded-full border-solid hover:text-zinc-900 hover:bg-emerald-400 transition-all"
         >
           Peer through my Personal Life
         </motion.button>

@@ -1,10 +1,9 @@
-@tailwind components;
-@tailwind utilities;
-
 /* Use Google Fonts for JetBrains Mono fallback; if you prefer local assets, replace with local paths */
 @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@100;200;300;400;500;600;700;800&display=swap');
 
 @tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 @layer base {
   :root {
@@ -75,10 +74,41 @@
 }
 
 @layer base {
-  /* Removed invalid @apply border-border; */
+  /* Global resets: ensure consistent background on html/body/#root and reset box-sizing */
+  *, *::before, *::after {
+    box-sizing: border-box;
+  }
 
-    body {
-      @apply bg-neutral-900 text-white;
-      font-feature-settings: "rlig" 1, "calt" 1;
-    }
+  html, body, #root {
+    height: 100%;
+    background-color: theme("colors.zinc.900"); /* processed by Tailwind */
+  }
+
+  /* Keep body font features here; background/text color should be applied via Tailwind classes */
+  body {
+    margin: 0;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+}
+
+@layer utilities {
+  /* Floating animation used by AnimatedText */
+  @keyframes float {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-8px); }
+    100% { transform: translateY(0); }
+  }
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  /* Gentle name shimmer/float for the AnimatedName component */
+  @keyframes name-shimmer {
+    0% { transform: translateY(0) scale(1); opacity: 1; }
+    50% { transform: translateY(-6px) scale(1.02); opacity: 0.95; }
+    100% { transform: translateY(0) scale(1); opacity: 1; }
+  }
+  .animate-name {
+    animation: name-shimmer 4s ease-in-out infinite;
+  }
 }
