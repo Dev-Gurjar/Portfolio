@@ -46,7 +46,7 @@ export const ContactPage = () => {
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
       transition={{ duration: 0.5 }}
-      className="text-white text-base bg-zinc-900 font-jetbrains_mono min-h-screen"
+  className="text-white text-base font-jetbrains_mono min-h-screen"
     >
       <Header />
       

@@ -9,6 +9,11 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+/* Global app root: set primary font for the app here so pages/components inherit it */
+.app-root {
+  font-family: 'JetBrains Mono', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif;
+}
+
 a {
   font-weight: 500;
   color: #646cff;
@@ -21,7 +26,6 @@ a:hover {
 body {
   margin: 0;
   min-width: 320px;
-  min-height: 100vh;
 }
 
 h1 {
@@ -70,6 +74,11 @@ button:focus-visible {
 /* ensure the spin rotates around the SVG center when utility 'origin-center' is applied */
 .origin-center {
   transform-origin: center center;
+}
+
+/* utility: root container reset to avoid double-padding issues with pages */
+.app-root, #root > div {
+  padding: 0;
 }
 
 /* slow pulsing glow for decorative green lightning */

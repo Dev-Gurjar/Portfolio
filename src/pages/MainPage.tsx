@@ -15,8 +15,8 @@ export const MainPage = () => {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
-      transition={{ duration: 0.5 }}
-      className="text-white text-base not-italic normal-nums font-normal accent-auto bg-zinc-900 box-border caret-transparent tracking-[normal] leading-8 font-jetbrains_mono min-h-screen"
+      transition={{ duration: 1 }}
+  className="text-white text-base not-italic normal-nums font-normal accent-auto box-border caret-transparent tracking-[normal] leading-8 font-jetbrains_mono min-h-screen"
     >
       <Header />
       <HeroSection />
