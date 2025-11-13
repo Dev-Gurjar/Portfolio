@@ -51,7 +51,7 @@ export const Timeline = () => {
           },
         ]}
       />
-      <div className="[mask-image:linear-gradient(rgba(0,0,0,0)_0px,rgb(0,0,0)_10%,rgb(0,0,0)_90%,rgba(0,0,0,0))] absolute bg-[linear-gradient(rgba(0,0,0,0)_0%,rgb(64,64,64),rgba(0,0,0,0)_99%)] box-border caret-transparent h-[3000px] w-0.5 overflow-hidden left-8 top-0"></div>
+      <div className="[mask-image:linear-gradient(rgba(228, 105, 105, 0)_0px,rgba(167, 65, 65, 1)_10%,rgba(90, 210, 146, 1)_90%,rgba(174, 196, 97, 0))] absolute bg-[linear-gradient(rgba(0,0,0,0)_0%,rgb(64,64,64),rgba(0,0,0,0)_99%)] box-border caret-transparent h-full w-0.5 overflow-hidden left-8 top-0"></div>
     </div>
   );
 };

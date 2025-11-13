@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
+const MotionLink = motion(Link);
 
 export const FooterContent = () => {
   return (
@@ -20,25 +21,51 @@ export const FooterContent = () => {
         What led you here? What are you looking for? I would love to hear from
         you over a virtual coffee chat!
       </p>
-      <Link to="/contact" className="box-border caret-transparent block">
-        <motion.button
-          whileHover={{ scale: 1.05 }}
-          whileTap={{ scale: 0.95 }}
-          className="relative bg-transparent caret-transparent inline-flex h-12 text-center w-full overflow-hidden mt-0 px-px rounded-lg md:w-60 md:mt-10"
-        >
-          <span className="absolute bg-[conic-gradient(from_90deg,rgb(226,203,255)_0deg,rgb(57,59,178)_50%,rgb(226,203,255)_100%)] bottom-[-1000%] box-border caret-transparent block left-[-1000%] right-[-1000%] top-[-1000%]"></span>
-          <span className="text-sm font-medium items-center backdrop-blur-3xl bg-slate-950 box-border caret-transparent gap-x-2 flex h-full justify-center leading-5 gap-y-2 w-full px-7 rounded-lg">
-            Let&#39;s get in touch
-            <img
-              src="https://c.animaapp.com/mgjkw8u78XhUAV/assets/icon-18.svg"
-              alt="Icon"
-              className="box-border caret-transparent h-3.5 w-3.5"
+    <MotionLink
+      to="/contact"
+      onClick={() => window.scrollTo(0, 0)}
+      whileHover={{ scale: 1.1 }}
+      whileTap={{ scale: 0.98 }}
+      aria-label="Go to contact page"
+      className="inline-block w-full md:w-60 rounded-lg"
+    >
+      {/* gradient border */}
+      <div className="bg-gradient-to-r from-purple-500 via-indigo-600 to-pink-500 rounded-lg p-[2px] ">
+        {/* inner surface */}
+        <div className="bg-slate-900/95 backdrop-blur-lg rounded-md px-5 py-3 flex items-center justify-center gap-3 text-white text-sm font-medium select-none">
+          <span>Let’s get in touch</span>
+
+          {/* small paper-plane icon (inline SVG to avoid external requests) */}
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="16"
+            height="16"
+            viewBox="0 0 24 24"
+            fill="none"
+            aria-hidden
+            className="block"
+          >
+            <path
+              d="M22 2L11 13"
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
             />
-          </span>
-        </motion.button>
-      </Link>
+            <path
+              d="M22 2L15 22L11 13L2 9L22 2Z"
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              fill="none"
+            />
+          </svg>
+        </div>
+      </div>
+    </MotionLink>
   <hr className="box-border caret-transparent h-0 border-gray-200 my-8 border-b-0 border-x-0 border-solid" />
-      <Link to="/personal" className="box-border caret-transparent block">
+      <Link to="/personal" className="box-border caret-transparent block" onClick={() => window.scrollTo(0, 0)}>
         <motion.button
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}

@@ -237,7 +237,6 @@ export const ContactPage = () => {
         </div>
       </main>
 
-      <Footer />
     </motion.div>
   );
 };

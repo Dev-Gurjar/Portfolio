@@ -73,7 +73,7 @@ export const HeroText = () => {
               />
             </a>
             <a
-              href="https://github.com/devgurjar"
+              href="https://github.com/dev-gurjar"
               className="text-emerald-400 items-center box-border caret-transparent flex h-9 justify-center leading-6 text-center w-9 border border-emerald-400 rounded-full border-solid md:text-left hover:text-zinc-900 hover:bg-emerald-400"
             >
               <img

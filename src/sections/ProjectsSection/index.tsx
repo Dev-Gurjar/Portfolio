@@ -9,7 +9,8 @@ export const ProjectsSection = () => {
           of recent projects
         </span>
       </h1>
-      <div className="items-center box-border caret-transparent gap-x-16 flex flex-wrap justify-center gap-y-16 mt-10 p-4">
+      <div className="box-border caret-transparent mt-10 p-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-8 justify-items-center">
         <ProjectCard
           backgroundImageUrl="https://c.animaapp.com/mgjkw8u78XhUAV/assets/36.png"
           coverImageUrl="https://c.animaapp.com/mgjkw8u78XhUAV/assets/31.jpg"
@@ -27,8 +28,8 @@ export const ProjectsSection = () => {
           }}
           linkText="Check Live Site"
           linkIcon="https://c.animaapp.com/mgjkw8u78XhUAV/assets/icon-16.svg"
-        />
-        <ProjectCard
+  />
+  <ProjectCard
           backgroundImageUrl="https://c.animaapp.com/mgjkw8u78XhUAV/assets/36.png"
           coverImageUrl="https://c.animaapp.com/mgjkw8u78XhUAV/assets/29.png"
           title="Smart Traffic Analytics & Prediction"
@@ -45,8 +46,8 @@ export const ProjectsSection = () => {
           }}
           linkText="Check Live Site"
           linkIcon="https://c.animaapp.com/mgjkw8u78XhUAV/assets/icon-16.svg"
-        />
-        <ProjectCard
+  />
+  <ProjectCard
           backgroundImageUrl="https://c.animaapp.com/mgjkw8u78XhUAV/assets/36.png"
           coverImageUrl="https://c.animaapp.com/mgjkw8u78XhUAV/assets/18.png"
           title="Histopathological Cancer Detection"
@@ -82,6 +83,7 @@ export const ProjectsSection = () => {
           linkText="Check Live Site"
           linkIcon="https://c.animaapp.com/mgjkw8u78XhUAV/assets/icon-16.svg"
         />
+        </div>
       </div>
     </div>
   );

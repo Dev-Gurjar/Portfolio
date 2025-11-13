@@ -2,8 +2,8 @@ import { motion } from "framer-motion";
 
 export const SocialLinks = () => {
   const socialLinks = [
-    { href: "https://www.linkedin.com/in/devendra-gurjar", icon: "icon-8.svg", label: "LinkedIn" },
-    { href: "https://github.com/devgurjar", icon: "icon-9.svg", label: "GitHub" },
+    { href: "https://www.linkedin.com/in/Dev-gurjar", icon: "icon-8.svg", label: "LinkedIn" },
+    { href: "https://github.com/Dev-gurjar", icon: "icon-9.svg", label: "GitHub" },
   ];
 
   return (

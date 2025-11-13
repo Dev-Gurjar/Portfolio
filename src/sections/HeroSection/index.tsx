@@ -16,7 +16,7 @@ export const HeroSection = () => {
         />
       </div>
         <div className="rounded-full blur-3xl opacity-60 mix-blend-screen animate-pulse-slow"
-             style={{width: '1200px', height: '1200px', marginTop: '-200px', background: 'radial-gradient(circle at 30% 30%, rgba(0,255,153,0.25), rgba(0,255,153,0.08) 20%, rgba(0,0,0,0) 45%)'}}/>
+           style={{width: '1000px', height: '900px', marginTop: '0px', background: 'radial-gradient(circle at 30% 30%, rgba(0,255,153,0.25), rgba(0,255,153,0.08) 20%, rgba(0,0,0,0) 45%)'}}/>
       </div>
 
       <main className="relative z-10 items-center box-border caret-transparent flex flex-col justify-center overflow-hidden mx-auto px-5 md:px-10">

@@ -1,80 +1,74 @@
 export const EducationGrid = () => {
   return (
-    <div className="box-border caret-transparent grid grid-cols-[repeat(1,minmax(0px,1fr))] py-10 md:grid-cols-[repeat(3,minmax(0px,1fr))]">
-      <div className="relative box-border caret-transparent h-full w-full p-2">
-        <div className="relative box-border caret-transparent h-full w-full z-20 border overflow-hidden p-4 rounded-2xl border-solid border-white/20">
-          <div className="relative box-border caret-transparent z-50">
-            <div className="box-border caret-transparent p-4">
-              <h4 className="text-zinc-100 font-bold box-border caret-transparent tracking-[0.4px] mt-4">
-                Bachelor of Science in Chemistry
-              </h4>
-              <div className="text-white/80 text-sm box-border caret-transparent leading-5">
-                2022 - Present
-              </div>
-              <div className="text-emerald-400 items-center box-border caret-transparent gap-x-3 flex justify-end gap-y-3">
-                <img
-                  src="https://c.animaapp.com/mgjkw8u78XhUAV/assets/icon-12.svg"
-                  alt="Icon"
-                  className="box-border caret-transparent h-5 w-5"
-                />
-                6.88 (Current)
-              </div>
-              <p className="text-zinc-400 text-sm box-border caret-transparent tracking-[0.35px] leading-5 mt-8">
-                Indian Institute Of Technology, Jodhpur
-              </p>
+    <div className="box-border caret-transparent py-10">
+      {/* Responsive grid: 1 col on mobile, 3 cols on md+ */}
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        {/* card 1 */}
+        <article className="relative flex flex-col justify-between min-h-[220px] p-6 rounded-2xl border border-white/20 bg-black/20 backdrop-blur-sm overflow-hidden transition-transform hover:scale-[1.02]">
+          <header>
+            <h4 className="text-zinc-100 font-bold tracking-[0.4px]">Bachelor of Science in Chemistry</h4>
+            <div className="text-white/80 text-sm mt-1">2022 - Present</div>
+          </header>
+
+          {/* centered stat */}
+          <div className="flex flex-col items-center mt-6">
+            <div className="flex items-center gap-3">
+              <img
+                src="https://c.animaapp.com/mgjkw8u78XhUAV/assets/icon-12.svg"
+                alt="score icon"
+                className="h-5 w-5"
+              />
+              <span className="text-emerald-400 font-semibold text-lg">6.88 *Current</span>
             </div>
+            <div className="text-zinc-400 text-sm mt-3"> CGPA</div>
           </div>
-        </div>
-      </div>
-      <div className="relative box-border caret-transparent h-full w-full p-2">
-        <div className="relative box-border caret-transparent h-full w-full z-20 border overflow-hidden p-4 rounded-2xl border-solid border-white/20">
-          <div className="relative box-border caret-transparent z-50">
-            <div className="box-border caret-transparent p-4">
-              <h4 className="text-zinc-100 font-bold box-border caret-transparent tracking-[0.4px] mt-4">
-                Senior Secondary (XII)
-              </h4>
-              <div className="text-white/80 text-sm box-border caret-transparent leading-5">
-                2021
-              </div>
-              <div className="text-emerald-400 items-center box-border caret-transparent gap-x-3 flex justify-end gap-y-3">
-                <img
-                  src="https://c.animaapp.com/mgjkw8u78XhUAV/assets/icon-12.svg"
-                  alt="Icon"
-                  className="box-border caret-transparent h-5 w-5"
-                />
-                93.87%
-              </div>
-              <p className="text-zinc-400 text-sm box-border caret-transparent tracking-[0.35px] leading-5 mt-8">
-                PSSS
-              </p>
+
+          <footer className="mt-6 text-zinc-400 text-sm">Indian Institute Of Technology, Jodhpur</footer>
+        </article>
+
+        {/* card 2 */}
+        <article className="relative flex flex-col justify-between min-h-[220px] p-6 rounded-2xl border border-white/20 bg-black/20 backdrop-blur-sm overflow-hidden transition-transform hover:scale-[1.02]">
+          <header>
+            <h4 className="text-zinc-100 font-bold tracking-[0.4px]">Senior Secondary (XII)</h4>
+            <div className="text-white/80 text-sm mt-1">2021</div>
+          </header>
+
+          <div className="flex flex-col items-center mt-6">
+            <div className="flex items-center gap-3">
+              <img
+                src="https://c.animaapp.com/mgjkw8u78XhUAV/assets/icon-12.svg"
+                alt="score icon"
+                className="h-5 w-5"
+              />
+              <span className="text-emerald-400 font-semibold text-lg">93.87%</span>
             </div>
+            <div className="text-zinc-400 text-sm mt-3">Aggregate Percentage</div>
           </div>
-        </div>
-      </div>
-      <div className="relative box-border caret-transparent h-full w-full p-2">
-        <div className="relative box-border caret-transparent h-full w-full z-20 border overflow-hidden p-4 rounded-2xl border-solid border-white/20">
-          <div className="relative box-border caret-transparent z-50">
-            <div className="box-border caret-transparent p-4">
-              <h4 className="text-zinc-100 font-bold box-border caret-transparent tracking-[0.4px] mt-4">
-                Secondary (X)
-              </h4>
-              <div className="text-white/80 text-sm box-border caret-transparent leading-5">
-                2019
-              </div>
-              <div className="text-emerald-400 items-center box-border caret-transparent gap-x-3 flex justify-end gap-y-3">
-                <img
-                  src="https://c.animaapp.com/mgjkw8u78XhUAV/assets/icon-12.svg"
-                  alt="Icon"
-                  className="box-border caret-transparent h-5 w-5"
-                />
-                79.83%
-              </div>
-              <p className="text-zinc-400 text-sm box-border caret-transparent tracking-[0.35px] leading-5 mt-8">
-                SGAS
-              </p>
+
+          <footer className="mt-6 text-zinc-400 text-sm">PSSS</footer>
+        </article>
+
+        {/* card 3 */}
+        <article className="relative flex flex-col justify-between min-h-[220px] p-6 rounded-2xl border border-white/20 bg-black/20 backdrop-blur-sm overflow-hidden transition-transform hover:scale-[1.02]">
+          <header>
+            <h4 className="text-zinc-100 font-bold tracking-[0.4px]">Secondary (X)</h4>
+            <div className="text-white/80 text-sm mt-1">2019</div>
+          </header>
+
+          <div className="flex flex-col items-center mt-6">
+            <div className="flex items-center gap-3">
+              <img
+                src="https://c.animaapp.com/mgjkw8u78XhUAV/assets/icon-12.svg"
+                alt="score icon"
+                className="h-5 w-5"
+              />
+              <span className="text-emerald-400 font-semibold text-lg">79.83%</span>
             </div>
+            <div className="text-zinc-400 text-sm mt-3">Aggregate Percentage</div>
           </div>
-        </div>
+
+          <footer className="mt-6 text-zinc-400 text-sm">SGAS</footer>
+        </article>
       </div>
     </div>
   );

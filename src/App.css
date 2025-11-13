@@ -39,3 +39,12 @@
 .read-the-docs {
   color: #888;
 }
+
+/* Hide scrollbar — put in your global stylesheet (Tailwind purge-safe) */
+.hide-scrollbar {
+  -ms-overflow-style: none; /* IE/Edge */
+  scrollbar-width: none; /* Firefox */
+}
+.hide-scrollbar::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera */
+}
