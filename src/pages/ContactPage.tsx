@@ -1,6 +1,5 @@
 import { motion } from "framer-motion";
 import { Header } from "../sections/Header";
-import { Footer } from "../sections/Footer";
 import { Mail, MapPin, Phone, Send, ArrowLeft } from "lucide-react";
 import { Link } from "react-router-dom";
 import { useState } from "react";
