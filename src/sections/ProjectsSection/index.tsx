@@ -6,14 +6,14 @@ export const ProjectsSection = () => {
       <h1 className="text-4xl font-bold box-border caret-transparent leading-10 text-center md:text-5xl md:leading-[48px]">
         A small selection of
         <span className="text-emerald-400 text-4xl box-border caret-transparent leading-10 md:text-5xl md:leading-[48px]">
-          of recent projects
+          recent projects
         </span>
       </h1>
       <div className="box-border caret-transparent mt-10 p-4">
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-8 justify-items-center">
         <ProjectCard
           backgroundImageUrl="https://c.animaapp.com/mgjkw8u78XhUAV/assets/36.png"
-          coverImageUrl="https://c.animaapp.com/mgjkw8u78XhUAV/assets/31.jpg"
+          coverImageUrl="src\assets\visionchatbot.png"
           title="VISION CHATBOT"
           description="AI multimodal assistant using transformer models (BERT, CLIP) with RAG architecture for fast, contextual responses."
           techIcons={{
@@ -49,7 +49,7 @@ export const ProjectsSection = () => {
   />
   <ProjectCard
           backgroundImageUrl="https://c.animaapp.com/mgjkw8u78XhUAV/assets/36.png"
-          coverImageUrl="https://c.animaapp.com/mgjkw8u78XhUAV/assets/18.png"
+          coverImageUrl="https://www.researchgate.net/publication/333767950/figure/fig4/AS:875425521737728@1585729117289/Comprehensive-view-of-CAD-system-for-breast-cancer-using-histopathology.jpg"
           title="Histopathological Cancer Detection"
           description="CNN classifier using ResNet50 transfer learning for medical image analysis, achieving high accuracy with augmentation and ensembles."
           techIcons={{
@@ -67,7 +67,7 @@ export const ProjectsSection = () => {
         />
         <ProjectCard
           backgroundImageUrl="https://c.animaapp.com/mgjkw8u78XhUAV/assets/36.png"
-          coverImageUrl="https://c.animaapp.com/mgjkw8u78XhUAV/assets/41.jpg"
+          coverImageUrl="src/assets/printperfection.png"
           title="PrintPerfection E‑commerce"
           description="Full-stack e-commerce platform with admin panel, Stripe integration, and automated deployments."
           techIcons={{
