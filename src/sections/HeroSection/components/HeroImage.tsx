@@ -39,7 +39,7 @@ export const HeroImage = () => {
             <div className="box-border caret-transparent rounded-full h-[298px] w-[298px] md:h-[498px] md:w-[498px]">
               <img
                 alt="Me"
-                src="https://c.animaapp.com/mgjkw8u78XhUAV/assets/pic.jpg"
+                src="Devgurjar.jpeg"
                 className="block box-border h-full w-full object-cover p-3 rounded-full relative z-10"
               />
             </div>

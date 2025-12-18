@@ -45,25 +45,27 @@ export const HeroText = () => {
         transition={{ delay: 0.5 }}
         className="items-center box-border caret-transparent gap-x-8 flex flex-col gap-y-8 text-center md:flex-row md:text-left"
       >
-        <motion.button
+        <motion.a
+          href="https://drive.google.com/file/d/1U44sNi256R5Gtnlv3IROKLBjNrbmwMhg/view?usp=sharing"
+          target="_blank"
+          rel="noopener noreferrer"
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
           className="text-emerald-400 text-sm font-semibold items-center bg-transparent caret-transparent gap-x-2 flex h-14 justify-center tracking-[2px] leading-5 gap-y-2 text-center uppercase text-nowrap border border-emerald-400 px-8 py-0 rounded-full border-solid hover:text-zinc-900 hover:bg-emerald-400 transition-all"
+          aria-label="Open resume (opens in new tab)"
         >
-          <span className="box-border caret-transparent block text-nowrap">
-            Download CV
-          </span>
+          <span className="block">View Resume</span>
           <img
-            src="https://c.animaapp.com/mgjkw8u78XhUAV/assets/icon-4.svg"
+            src="/Devgurjar.jpeg"
             alt="Icon"
-            className="text-xl box-border caret-transparent h-5 leading-7 text-nowrap w-5"
+            className="h-5 w-5"
           />
-        </motion.button>
+        </motion.a>
         <div className="box-border caret-transparent text-center mb-8 md:text-left md:mb-0">
           <div className="box-border caret-transparent gap-x-6 flex gap-y-6 text-center md:text-left">
             {/* Removed unused social links: Facebook, Instagram, YouTube */}
             <a
-              href="https://www.linkedin.com/in/devendra-gurjar"
+              href="https://www.linkedin.com/in/Dev-Gurjar/"
               className="text-emerald-400 items-center box-border caret-transparent flex h-9 justify-center leading-6 text-center w-9 border border-emerald-400 rounded-full border-solid md:text-left hover:text-zinc-900 hover:bg-emerald-400"
             >
               <img

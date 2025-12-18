@@ -79,7 +79,11 @@ export const Timeline = () => {
         "Web & App Development Head, Prometeo IIT Jodhpur — Led development of official fest site & app supporting 1,200+ registrations. Coordinated 6-member dev team, managing event modules, schedules, and user workflows with a visually compelling interface.",
       images: [
         {
-          src: "https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=800&q=80",
+          src: "/prometeo2.png",
+          alt: "Prometeo Fest",
+        },
+        {
+          src: "/prometeo1.png",
           alt: "Prometeo Fest",
         },
       ],
@@ -116,7 +120,7 @@ export const Timeline = () => {
         "CoinQuest — Web Developer Intern. Developed authoritative real-time game engine using Socket.io with state machine ensuring deterministic game flow. Implemented wallet-first authentication (Privy), Postgres-backed bet/cashout modules, and modular chat features with rate-limiting and session recovery for concurrent users.",
       images: [
         {
-          src: "https://images.unsplash.com/photo-1621761191319-c6fb62004040?w=800&q=80",
+          src: "/Coinquest.png",
           alt: "CoinQuest Gaming Platform",
         },
       ],

@@ -6,6 +6,7 @@ import { ProjectCard } from "./components/ProjectCard";
 import visionChatbotImg from "/visionchatbot.png";
 import printPerfectionImg from "/printperfection.png";
 import HistopathalogyImg from "/histopathology.png";
+import CoinquestImg from "/Coinquest.png";
 import legalRagImg from "/legalrag.png";
 
 type TechIcons = {
@@ -42,6 +43,24 @@ const projects: Project[] = [
     linkIcon: "https://c.animaapp.com/mgjkw8u78XhUAV/assets/icon-16.svg",
     linkUrl: "https://github.com/dev-gurjar/vision-chatbot",
   },
+  {
+    id: "Coin Quest",
+    backgroundImageUrl: "https://c.animaapp.com/mgjkw8u78XhUAV/assets/36.png",
+    coverImageUrl: CoinquestImg,
+    title: "Coin Quest",
+    description:
+      "Developed authoritative real-time game engine using Socket.io with state machine ensuring deterministic game flow. Implemented wallet-first authentication (Privy), Postgres-backed bet/cashout modules, and modular chat features with rate-limiting and session recovery for concurrent users.",
+    techIcons: {
+      python: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg",
+      pytorch: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pytorch/pytorch-original.svg",
+      fastapi: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/fastapi/fastapi-original.svg",
+      docker: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg",
+    },
+    linkText: "View Project",
+    linkIcon: "https://c.animaapp.com/mgjkw8u78XhUAV/assets/icon-16.svg",
+    linkUrl: "https://github.com/dev-gurjar/Coinquest",
+  },
+
   {
     id: "traffic-analytics",
     backgroundImageUrl: "https://c.animaapp.com/mgjkw8u78XhUAV/assets/36.png",

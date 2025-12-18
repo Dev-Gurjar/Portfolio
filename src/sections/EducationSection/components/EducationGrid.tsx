@@ -6,7 +6,7 @@ export const EducationGrid = () => {
         {/* card 1 */}
         <article className="relative flex flex-col justify-between min-h-[220px] p-6 rounded-2xl border border-white/20 bg-black/20 backdrop-blur-sm overflow-hidden transition-transform hover:scale-[1.02]">
           <header>
-            <h4 className="text-zinc-100 font-bold tracking-[0.4px]">Bachelor of Science in Chemistry</h4>
+            <h4 className="text-zinc-100 font-bold tracking-[0.4px]">BS Chemistry with Specialization in Entrepreneurship</h4>
             <div className="text-white/80 text-sm mt-1">2022 - Present</div>
           </header>
 
@@ -18,7 +18,7 @@ export const EducationGrid = () => {
                 alt="score icon"
                 className="h-5 w-5"
               />
-              <span className="text-emerald-400 font-semibold text-lg">6.88 *Current</span>
+              <span className="text-emerald-400 font-semibold text-lg">7.08 *Current</span>
             </div>
             <div className="text-zinc-400 text-sm mt-3"> CGPA</div>
           </div>
@@ -45,7 +45,7 @@ export const EducationGrid = () => {
             <div className="text-zinc-400 text-sm mt-3">Aggregate Percentage</div>
           </div>
 
-          <footer className="mt-6 text-zinc-400 text-sm">PSSS</footer>
+          <footer className="mt-6 text-zinc-400 text-sm">Proton Senior Secoundary School</footer>
         </article>
 
         {/* card 3 */}
@@ -67,7 +67,7 @@ export const EducationGrid = () => {
             <div className="text-zinc-400 text-sm mt-3">Aggregate Percentage</div>
           </div>
 
-          <footer className="mt-6 text-zinc-400 text-sm">SGAS</footer>
+          <footer className="mt-6 text-zinc-400 text-sm">Suraj Global Acadmic School</footer>
         </article>
       </div>
     </div>

@@ -85,22 +85,24 @@ export const TimelineItem = (props: TimelineItemProps) => {
               ))}
             </div>
           )}
-          <div className="box-border caret-transparent gap-x-4 grid grid-cols-[repeat(2,minmax(0px,1fr))] gap-y-4">
+          <div className="box-border caret-transparent grid grid-cols-1 gap-4">
             {props.images.map((image, index) => (
-              <img
-                key={index}
-                alt={image.alt}
-                src={image.src}
-                className={`text-transparent aspect-[auto_500_/_500] shadow-[rgba(0,0,0,0)_0px_0px_0px_0px,rgba(0,0,0,0)_0px_0px_0px_0px,rgba(34,42,53,0.06)_0px_0px_24px_0px,rgba(0,0,0,0.05)_0px_1px_1px_0px,rgba(34,42,53,0.04)_0px_0px_0px_1px,rgba(34,42,53,0.08)_0px_0px_4px_0px,rgba(47,48,55,0.05)_0px_16px_68px_0px,rgba(255,255,255,0.1)_0px_1px_0px_0px_inset] box-border h-20 max-w-full object-cover w-full rounded-lg md:h-60 transition-all duration-700 hover:scale-105 ${
-                  isActive ? "opacity-100 scale-100 brightness-100" : "opacity-50 scale-95 brightness-75"
-                }`}
-                onError={(e) => {
-                  const target = e.currentTarget;
-                  target.onerror = null;
-                  target.src =
-                    "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=800&q=80";
-                }}
-              />
+              <div key={index} className="w-full bg-zinc-900/40 rounded-lg overflow-hidden">
+                <img
+                  alt={image.alt}
+                  src={image.src}
+                  onError={(e) => {
+                    const target = e.currentTarget;
+                    target.onerror = null;
+                    target.src =
+                      "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=800&q=80";
+                  }}
+                  loading="lazy"
+                  className={`w-full h-auto block object-contain transition-transform duration-300 hover:scale-105 ${
+                    isActive ? "opacity-100" : "opacity-60"
+                  }`}
+                />
+              </div>
             ))}
           </div>
         </div>

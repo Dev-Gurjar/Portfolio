@@ -1,3 +1,4 @@
+//src/sections/Hero/components/Widgets.tsx
 "use client";
 import React from "react";
 import { MusicPlayer } from "@/components/ui/music-player";
