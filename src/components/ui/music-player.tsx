@@ -1,3 +1,4 @@
+// src/components/ui/music-player.tsx
 "use client";
 import React from "react";
 import { useState, useEffect, useRef } from "react";

@@ -10,9 +10,10 @@ export const TimelineSection: React.FC = () => {
             My journey report
           </h2>
           <p className="text-neutral-300 text-sm box-border caret-transparent mx-auto leading-5 max-w-lg md:text-base md:leading-6">
-            I&#39;ve had the opportunity to develop software across a variety of
-            settings — from small side-jobs to large corporation, mostly
-            building financial systems. Here&#39;s my timeline of my journey
+            I've had the opportunity to develop software across a variety of
+            settings — from academic projects to professional internships,
+            building ML pipelines, web systems, and AI agents. Here's the timeline
+            of my journey from 2022 to present.
           </p>
         </div>
 

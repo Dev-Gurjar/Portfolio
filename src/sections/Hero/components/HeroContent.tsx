@@ -27,9 +27,9 @@ const currentTrack: Track = {
   title: "Mayonako no Door (Stay With Me)",
   artist: "Miki Matsubara",
   album: "Pocket Park",
-  artwork: "src/assets/song.jpg",     // must exist
+  artwork: "/song.jpg",     // must exist
   duration: 310,
-  url: "src/assets/audio/stay_with_me.mp3",           // <-- add this and ensure file exists
+  url: "/stay_with_me.mp3",           // <-- add this and ensure file exists
 };
   const queue: Track[] = [currentTrack];
 

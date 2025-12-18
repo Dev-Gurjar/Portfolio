@@ -1,82 +1,119 @@
-export type ProjectCardProps = {
-  backgroundImageUrl: string;
-  coverImageUrl: string;
-  title: string;
-  description: string;
-  techIcons: {
-    nextIcon: string;
-    expressIcon: string;
-    tsIcon: string;
-    tailwindIcon: string;
-    uiLibraryIcon: string;
+// src/sections/ProjectsSection/components/ProjectCard.tsx
+import React, { useState } from "react";
+import type { Project } from "../index";
+
+const FALLBACK_IMAGE = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='300'%3E%3Crect width='100%25' height='100%25' fill='%23111827'/%3E%3Ctext x='50%25' y='50%25' fill='%239CA3AF' dominant-baseline='middle' text-anchor='middle' font-family='Arial' font-size='18'%3EImage not available%3C/text%3E%3C/svg%3E";
+
+export const ProjectCard: React.FC<{ project: Project }> = ({ project }) => {
+  const {
+    id,
+    title,
+    description,
+    coverImageUrl,
+    techIcons,
+    linkText,
+    linkIcon,
+    linkUrl,
+  } = project;
+
+  const [imgError, setImgError] = useState(false);
+  const [iconErrors, setIconErrors] = useState<Record<string, boolean>>({});
+
+  const handleImageError = () => setImgError(true);
+  
+  const handleIconError = (key: string) => {
+    setIconErrors(prev => ({ ...prev, [key]: true }));
   };
-  linkText: string;
-  linkIcon: string;
-};
 
-import { motion } from "framer-motion";
-export const ProjectCard = (props: ProjectCardProps) => {
   return (
-    <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: "-100px" }}
-      whileHover={{ y: -6 }}
-      transition={{ duration: 0.25 }}
-      className="w-[300px] md:w-96 h-[520px]"
+    <article
+      className="group relative flex flex-col bg-zinc-900 border border-zinc-800 rounded-2xl overflow-hidden shadow-lg hover:border-emerald-400/50 transition-all duration-300 h-[480px]"
+      aria-labelledby={`project-${id}-title`}
     >
-      <div className="bg-slate-900/80 border border-white/10 rounded-2xl overflow-hidden shadow-lg h-full flex flex-col">
-        {/* Image area */}
-        <div className="relative h-[200px] md:h-[300px] w-full bg-slate-900 flex items-end justify-center overflow-hidden">
-          <img
-            alt="background"
-            src={props.backgroundImageUrl}
-            className="absolute inset-0 w-full h-full object-cover opacity-60"
-          />
-          <div className="relative w-[85%] md:w-[85%] mb-0">
-            <img
-              alt="cover"
-              src={props.coverImageUrl}
-              className="w-full h-auto object-contain drop-shadow-2xl"
-            />
-          </div>
-        </div>
+      {/* Fixed height image container - prevents shifting */}
+      <div className="relative w-full h-52 bg-zinc-800 overflow-hidden flex-shrink-0">
+        <img
+          src={imgError ? FALLBACK_IMAGE : coverImageUrl}
+          alt={`${title} preview`}
+          onError={handleImageError}
+          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+          loading="lazy"
+        />
+        {/* Optional gradient overlay for better text readability */}
+        <div className="absolute inset-0 bg-gradient-to-t from-zinc-900/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
+      </div>
 
-        {/* Content area */}
-        <div className="p-4 md:p-6 flex flex-col flex-1">
-          <h3 className="text-base md:text-2xl font-bold leading-tight mb-2 text-left">
-            {props.title}
-          </h3>
-          <p className="text-slate-300 text-sm md:text-base flex-1 italic text-left break-words whitespace-normal">{props.description}</p>
+      {/* Content area with flex layout to prevent image shifting */}
+      <div className="flex flex-col flex-1 p-5">
+        <h3
+          id={`project-${id}-title`}
+          className="text-xl font-bold text-white mb-3 line-clamp-2"
+        >
+          {title}
+        </h3>
 
-          <div className="flex items-center justify-between mt-4">
-              <div className="flex items-center gap-2">
-              <div className="flex -space-x-2">
-                <div className="bg-black/70 rounded-full p-1 md:p-2 border border-white/10">
-                  <img src={props.techIcons.nextIcon} alt="next" className="h-5 w-5 md:h-6 md:w-6" />
-                </div>
-                <div className="bg-black/70 rounded-full p-1 md:p-2 border border-white/10">
-                  <img src={props.techIcons.expressIcon} alt="express" className="h-5 w-5 md:h-6 md:w-6" />
-                </div>
-                <div className="bg-black/70 rounded-full p-1 md:p-2 border border-white/10">
-                  <img src={props.techIcons.tsIcon} alt="ts" className="h-5 w-5 md:h-6 md:w-6" />
-                </div>
-                <div className="bg-black/70 rounded-full p-1 md:p-2 border border-white/10">
-                  <img src={props.techIcons.tailwindIcon} alt="tailwind" className="h-5 w-5 md:h-6 md:w-6" />
-                </div>
-                <div className="bg-black/70 rounded-full p-1 md:p-2 border border-white/10">
-                  <img src={props.techIcons.uiLibraryIcon} alt="ui" className="h-5 w-5 md:h-6 md:w-6" />
-                </div>
+        <p className="text-sm text-zinc-400 mb-4 line-clamp-3 flex-1">
+          {description}
+        </p>
+
+        {/* Tech stack icons - fixed positioning at bottom */}
+        <div className="flex items-center justify-between gap-3 mt-auto">
+          <div className="flex items-center gap-2 flex-wrap">
+            {Object.entries(techIcons).map(([key, iconUrl]) => (
+              <div
+                key={key}
+                className="w-8 h-8 rounded-md bg-grey-300 border border-zinc-700 flex items-center justify-center  hover:border-emerald-400/50 transition-colors"
+                title={key}
+              >
+                {!iconErrors[key] ? (
+                  <img
+                    src={iconUrl}
+                    alt={`${key} icon`}
+                    onError={() => handleIconError(key)}
+                    className="w-full h-full object-contain"
+                    loading="lazy"
+                  />
+                ) : (
+                  <span className="text-[10px] text-zinc-500 uppercase font-bold">
+                    {key.slice(0, 2)}
+                  </span>
+                )}
               </div>
-            </div>
-
-            <div className="flex items-center gap-2">
-              <p className="text-emerald-400 text-sm md:text-base">{props.linkText}</p>
-              <img src={props.linkIcon} alt="icon" className="h-4 w-4 md:h-5 md:w-5" />
-            </div>
+            ))}
           </div>
+
+          {/* Link button */}
+          {linkUrl ? (
+            <a
+              href={linkUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-emerald-400 text-zinc-900 font-semibold text-sm hover:bg-emerald-500 transition-colors flex-shrink-0"
+              aria-label={`Open ${title} in a new tab`}
+            >
+              <span>{linkText || "View"}</span>
+              {linkIcon && (
+                <img
+                  src={linkIcon}
+                  alt=""
+                  className="w-4 h-4"
+                  aria-hidden="true"
+                />
+              )}
+            </a>
+          ) : (
+            <button
+              className="px-4 py-2 rounded-lg bg-zinc-800 text-zinc-500 text-sm cursor-not-allowed flex-shrink-0"
+              disabled
+              aria-disabled="true"
+            >
+              No Link
+            </button>
+          )}
         </div>
       </div>
-    </motion.div>
+    </article>
   );
 };
+
+export default ProjectCard;

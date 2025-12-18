@@ -1,90 +1,136 @@
+// src/sections/ProjectsSection/index.tsx
+import React from "react";
 import { ProjectCard } from "./components/ProjectCard";
 
-export const ProjectsSection = () => {
+// Import local images properly
+import visionChatbotImg from "/visionchatbot.png";
+import printPerfectionImg from "/printperfection.png";
+import HistopathalogyImg from "/histopathology.png";
+import legalRagImg from "/legalrag.png";
+
+type TechIcons = {
+  [key: string]: string;
+};
+
+export type Project = {
+  id: string;
+  backgroundImageUrl: string;
+  coverImageUrl: string;
+  title: string;
+  description: string;
+  techIcons: TechIcons;
+  linkText?: string;
+  linkIcon?: string;
+  linkUrl?: string;
+};
+
+const projects: Project[] = [
+  {
+    id: "vision-chatbot",
+    backgroundImageUrl: "https://c.animaapp.com/mgjkw8u78XhUAV/assets/36.png",
+    coverImageUrl: visionChatbotImg,
+    title: "VISION CHATBOT",
+    description:
+      "AI multimodal assistant using transformer models (BERT, CLIP) with RAG architecture for fast, contextual responses.",
+    techIcons: {
+      python: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg",
+      pytorch: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pytorch/pytorch-original.svg",
+      fastapi: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/fastapi/fastapi-original.svg",
+      docker: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg",
+    },
+    linkText: "View Project",
+    linkIcon: "https://c.animaapp.com/mgjkw8u78XhUAV/assets/icon-16.svg",
+    linkUrl: "https://github.com/dev-gurjar/vision-chatbot",
+  },
+  {
+    id: "traffic-analytics",
+    backgroundImageUrl: "https://c.animaapp.com/mgjkw8u78XhUAV/assets/36.png",
+    coverImageUrl: "https://c.animaapp.com/mgjkw8u78XhUAV/assets/29.png",
+    title: "Smart Traffic Analytics & Prediction",
+    description:
+      "Real-time traffic congestion prediction using OpenCV and TensorFlow, with a TypeScript dashboard for sensor visualization.",
+    techIcons: {
+      typescript: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg",
+      tensorflow: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tensorflow/tensorflow-original.svg",
+      opencv: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/opencv/opencv-original.svg",
+      react: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg",
+    },
+    linkText: "View Project",
+    linkIcon: "https://c.animaapp.com/mgjkw8u78XhUAV/assets/icon-16.svg",
+    linkUrl: "https://github.com/Dev-Gurjar/Smart_Traffic_Analytics",
+  },
+  {
+    id: "histopath-cancer",
+    backgroundImageUrl: "https://c.animaapp.com/mgjkw8u78XhUAV/assets/36.png",
+    coverImageUrl: HistopathalogyImg,
+    title: "Histopathological Cancer Detection",
+    description:
+      "CNN classifier using ResNet50 transfer learning for medical image analysis, achieving high accuracy with augmentation and ensembles.",
+    techIcons: {
+      python: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg",
+      jupyter: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jupyter/jupyter-original.svg",
+      tensorflow: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tensorflow/tensorflow-original.svg",
+      numpy: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/numpy/numpy-original.svg",
+    },
+    linkText: "View Code",
+    linkIcon: "https://c.animaapp.com/mgjkw8u78XhUAV/assets/icon-16.svg",
+    linkUrl: "https://www.kaggle.com/devgurjar/code",
+  },
+  {
+    id: "printperfection",
+    backgroundImageUrl: "https://c.animaapp.com/mgjkw8u78XhUAV/assets/36.png",
+    coverImageUrl: printPerfectionImg,
+    title: "PrintPerfection E-commerce",
+    description:
+      "Full-stack e-commerce platform with admin panel, Stripe integration, and automated deployments.",
+    techIcons: {
+      nextjs: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg",
+      typescript: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg",
+      tailwind: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg",
+      postgresql: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg",
+    },
+    linkText: "View Project",
+    linkIcon: "https://c.animaapp.com/mgjkw8u78XhUAV/assets/icon-16.svg",
+    linkUrl: "https://github.com/Dev-Gurjar/print_perfection",
+  },
+  {
+    id: "multi-agent-rag-legal-assistant",
+    backgroundImageUrl: "https://c.animaapp.com/mgjkw8u78XhUAV/assets/36.png",
+    coverImageUrl: legalRagImg,
+    title: "Multi-Agent RAG Legal Assistant",
+    description:
+      "Multi-agent Retrieval-Augmented Generation (RAG) system for legal research, drafting, and Q&A.",
+    techIcons: {
+      python: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg",
+      langchain: "https://cdn.simpleicons.org/langchain/1C3C3C",
+      openai: "https://cdn.simpleicons.org/openai/412991",
+      pinecone: "https://avatars.githubusercontent.com/u/24711520?s=200&v=4",
+    },
+    linkText: "View Repo",
+    linkIcon: "https://c.animaapp.com/mgjkw8u78XhUAV/assets/icon-16.svg",
+    linkUrl: "https://github.com/Dev-Gurjar/Multi-agent-rag-legal-assistant",
+  },
+];
+
+export const ProjectsSection: React.FC = () => {
   return (
-    <div className="box-border caret-transparent py-20">
-      <h1 className="text-4xl font-bold box-border caret-transparent leading-10 text-center md:text-5xl md:leading-[48px]">
+    <section className="py-20 px-4">
+      <h1 className="text-4xl font-bold leading-10 text-center md:text-5xl md:leading-[48px]">
         A small selection of
-        <span className="text-emerald-400 text-4xl box-border caret-transparent leading-10 md:text-5xl md:leading-[48px]">
-          recent projects
+        <span className="text-emerald-400">
+          {" "}recent projects
         </span>
       </h1>
-      <div className="box-border caret-transparent mt-10 p-4">
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-8 justify-items-center">
-        <ProjectCard
-          backgroundImageUrl="https://c.animaapp.com/mgjkw8u78XhUAV/assets/36.png"
-          coverImageUrl="src\assets\visionchatbot.png"
-          title="VISION CHATBOT"
-          description="AI multimodal assistant using transformer models (BERT, CLIP) with RAG architecture for fast, contextual responses."
-          techIcons={{
-            nextIcon: "https://c.animaapp.com/mgjkw8u78XhUAV/assets/next.svg",
-            expressIcon:
-              "https://c.animaapp.com/mgjkw8u78XhUAV/assets/express.png",
-            tsIcon: "https://c.animaapp.com/mgjkw8u78XhUAV/assets/ts.svg",
-            tailwindIcon:
-              "https://c.animaapp.com/mgjkw8u78XhUAV/assets/tail.svg",
-            uiLibraryIcon:
-              "https://c.animaapp.com/mgjkw8u78XhUAV/assets/shadcn.png",
-          }}
-          linkText="Check Live Site"
-          linkIcon="https://c.animaapp.com/mgjkw8u78XhUAV/assets/icon-16.svg"
-  />
-  <ProjectCard
-          backgroundImageUrl="https://c.animaapp.com/mgjkw8u78XhUAV/assets/36.png"
-          coverImageUrl="https://c.animaapp.com/mgjkw8u78XhUAV/assets/29.png"
-          title="Smart Traffic Analytics & Prediction"
-          description="Real-time traffic congestion prediction using OpenCV and TensorFlow, with a TypeScript dashboard for sensor visualization."
-          techIcons={{
-            nextIcon: "https://c.animaapp.com/mgjkw8u78XhUAV/assets/next.svg",
-            expressIcon:
-              "https://c.animaapp.com/mgjkw8u78XhUAV/assets/express.png",
-            tsIcon: "https://c.animaapp.com/mgjkw8u78XhUAV/assets/ts.svg",
-            tailwindIcon:
-              "https://c.animaapp.com/mgjkw8u78XhUAV/assets/tail.svg",
-            uiLibraryIcon:
-              "https://c.animaapp.com/mgjkw8u78XhUAV/assets/daisyui.png",
-          }}
-          linkText="Check Live Site"
-          linkIcon="https://c.animaapp.com/mgjkw8u78XhUAV/assets/icon-16.svg"
-  />
-  <ProjectCard
-          backgroundImageUrl="https://c.animaapp.com/mgjkw8u78XhUAV/assets/36.png"
-          coverImageUrl="https://www.researchgate.net/publication/333767950/figure/fig4/AS:875425521737728@1585729117289/Comprehensive-view-of-CAD-system-for-breast-cancer-using-histopathology.jpg"
-          title="Histopathological Cancer Detection"
-          description="CNN classifier using ResNet50 transfer learning for medical image analysis, achieving high accuracy with augmentation and ensembles."
-          techIcons={{
-            nextIcon: "https://c.animaapp.com/mgjkw8u78XhUAV/assets/next.svg",
-            expressIcon:
-              "https://c.animaapp.com/mgjkw8u78XhUAV/assets/express.png",
-            tsIcon: "https://c.animaapp.com/mgjkw8u78XhUAV/assets/ts.svg",
-            tailwindIcon:
-              "https://c.animaapp.com/mgjkw8u78XhUAV/assets/tail.svg",
-            uiLibraryIcon:
-              "https://c.animaapp.com/mgjkw8u78XhUAV/assets/shadcn.png",
-          }}
-          linkText="Check Live Site"
-          linkIcon="https://c.animaapp.com/mgjkw8u78XhUAV/assets/icon-16.svg"
-        />
-        <ProjectCard
-          backgroundImageUrl="https://c.animaapp.com/mgjkw8u78XhUAV/assets/36.png"
-          coverImageUrl="src/assets/printperfection.png"
-          title="PrintPerfection E‑commerce"
-          description="Full-stack e-commerce platform with admin panel, Stripe integration, and automated deployments."
-          techIcons={{
-            nextIcon: "https://c.animaapp.com/mgjkw8u78XhUAV/assets/next.svg",
-            expressIcon:
-              "https://c.animaapp.com/mgjkw8u78XhUAV/assets/express.png",
-            tsIcon: "https://c.animaapp.com/mgjkw8u78XhUAV/assets/ts.svg",
-            tailwindIcon:
-              "https://c.animaapp.com/mgjkw8u78XhUAV/assets/tail.svg",
-            uiLibraryIcon:
-              "https://c.animaapp.com/mgjkw8u78XhUAV/assets/shadcn.png",
-          }}
-          linkText="Check Live Site"
-          linkIcon="https://c.animaapp.com/mgjkw8u78XhUAV/assets/icon-16.svg"
-        />
+
+      <div className="mt-10 max-w-7xl mx-auto">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+          {projects.map((project) => (
+            <ProjectCard key={project.id} project={project} />
+          ))}
         </div>
       </div>
-    </div>
+    </section>
   );
 };
+
+export default ProjectsSection;
