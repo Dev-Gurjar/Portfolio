@@ -79,7 +79,7 @@ export const ContactPage = () => {
               animate={{ x: 0, opacity: 1 }}
               transition={{ delay: 0.3 }}
             >
-              <h2 className="text-3xl font-bold mb-8">Get in Touch</h2>
+              <h2 className="text-3xl font-bold mb-8">Get in Touch </h2>
               
               <div className="space-y-6 mb-8">
                 <div className="flex items-start gap-4">
@@ -226,7 +226,7 @@ export const ContactPage = () => {
                   ) : (
                     <>
                       <Send className="w-5 h-5" />
-                      Send Message
+                      Send Message *not wroking rn
                     </>
                   )}
                 </motion.button>

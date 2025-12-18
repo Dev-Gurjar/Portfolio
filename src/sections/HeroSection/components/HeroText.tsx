@@ -14,7 +14,7 @@ export const HeroText = () => {
         transition={{ delay: 0.2 }}
         className="text-xl box-border caret-transparent leading-7 text-center md:text-left"
       >
-          Software Engineer
+          AI/ML Engineer
       </motion.span>
       <motion.h1
         initial={{ opacity: 0, y: 20 }}
@@ -36,8 +36,7 @@ export const HeroText = () => {
         transition={{ delay: 0.4 }}
         className="text-white/80 box-border caret-transparent max-w-[500px] text-center mb-9 md:text-left"
       >
-        IT Specialist &amp; Full-Stack Developer | Pragmatic, delivery-oriented
-        professional
+        AI Automation Specialist | Full-Stack Developer, <br/> Making Production ready Solutions
       </motion.p>
       <motion.div
         initial={{ opacity: 0, y: 20 }}
@@ -56,7 +55,7 @@ export const HeroText = () => {
         >
           <span className="block">View Resume</span>
           <img
-            src="/Devgurjar.jpeg"
+            src="https://c.animaapp.com/mgjkw8u78XhUAV/assets/icon-4.svg"
             alt="Icon"
             className="h-5 w-5"
           />

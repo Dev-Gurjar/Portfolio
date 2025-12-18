@@ -42,7 +42,7 @@ export const Timeline = () => {
         "Got admitted into IIT Jodhpur — Qualified JEE Main & JEE Advanced (top 2%). Beginning of my journey in B.S. Chemistry with specialization in Entrepreneurship, focusing on building strong fundamentals in algorithms, data structures, and software development.",
       images: [
         {
-          src: "https://upload.wikimedia.org/wikipedia/en/thumb/8/8c/Indian_Institute_of_Technology_Jodhpur_Logo.svg/1200px-Indian_Institute_of_Technology_Jodhpur_Logo.svg.png",
+          src: "iitjcampus51.jpg",
           alt: "IIT Jodhpur",
         },
       ],
